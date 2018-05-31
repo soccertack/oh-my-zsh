@@ -2,7 +2,20 @@ function prompt_char {
 	if [ $UID -eq 0 ]; then echo "#"; else echo $; fi
 }
 
-PROMPT='%(!.%{$fg_bold[red]%}.%{$fg_bold[green]%}%n@)%m %{$fg_bold[blue]%}%(!.%1~.%~) $(git_prompt_info)%_$(prompt_char)%{$reset_color%} '
+EXP_NO=`uname -a | awk '{print $2}' | cut -d. -f2`
 
-ZSH_THEME_GIT_PROMPT_PREFIX="("
-ZSH_THEME_GIT_PROMPT_SUFFIX=") "
+PROMPT='%(!.%{$fg_no_bold[yellow]%}.%{$fg_bold[green]%})[%m ${EXP_NO} %{$fg_no_bold[yellow]%}%~] $(git_prompt_info)%{$fg[yellow]%}
+%#%{$reset_color%} '
+RPROMPT='%{$fg_no_bold[cyan]%}[%*]%{$reset_color%}'
+
+ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}("
+ZSH_THEME_GIT_PROMPT_SUFFIX="%{$fg[cyan]%}) "
+ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}●"
+ZSH_THEME_GIT_PROMPT_CLEAN=""
+ZSH_THEME_GIT_PROMPT_UNTRACKED=""
+
+ZSH_THEME_GIT_PROMPT_ADDED="%{$fg[green]%}●"
+ZSH_THEME_GIT_PROMPT_MODIFIED="%{$fg[red]%}●"
+ZSH_THEME_GIT_PROMPT_RENAMED="%{$fg[green]%}↪"
+ZSH_THEME_GIT_PROMPT_DELETED="%{$fg[red]%}✗"
+ZSH_THEME_GIT_PROMPT_UNMERGED="%{$fg[red]%}!!!!"
