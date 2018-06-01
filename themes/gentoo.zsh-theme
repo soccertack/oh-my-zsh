@@ -4,8 +4,9 @@ function prompt_char {
 
 EXP_NO=`uname -a | awk '{print $2}' | cut -d. -f2`
 
-PROMPT='%(!.%{$fg_no_bold[yellow]%}.%{$fg_bold[green]%})[%m ${EXP_NO} %{$fg_no_bold[yellow]%}%~] $(git_prompt_info)%{$fg[yellow]%}
-%#%{$reset_color%} '
+PROMPT_COLOR=214
+PROMPT='%F{$PROMPT_COLOR}[%m ${EXP_NO} %~]%f $(git_prompt_info)
+%F{$PROMPT_COLOR}%#%f '
 RPROMPT='%{$fg_no_bold[cyan]%}[%*]%{$reset_color%}'
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[cyan]%}("
