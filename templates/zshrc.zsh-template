@@ -92,3 +92,17 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+alias grep="grep --color --exclude=cscope*"
+alias dgrep="dmesg | grep"
+alias kg="pgrep qemu | xargs sudo kill -9"
+alias gl="git log --oneline --decorate -n 30"
+alias gs="git status"
+alias grc="git rebase --continue"
+alias ifc="ifconfig | grep inet"
+alias mk="./make.sh"
+alias r="pushd ~;./run.sh;popd"
+alias v="cd /srv/vm"
+alias l1="ssh root@10.10.1.100"
+alias l2="ssh root@10.10.1.101"
+alias l3="ssh root@10.10.1.102"
