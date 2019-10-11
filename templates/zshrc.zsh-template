@@ -93,7 +93,7 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
-alias grep="grep --color --exclude=cscope*"
+alias grep="grep --color --exclude='cscope*'"
 alias dgrep="dmesg | grep"
 alias kg="pgrep qemu | xargs sudo kill -9"
 alias gl="git log --oneline --decorate -n 30"
